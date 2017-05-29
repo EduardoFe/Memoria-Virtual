@@ -1,0 +1,98 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+	<title>Phaser - Criação do dia 27/04/2017 </title>
+	<script type="text/javascript" src="js/phaser.min.js"></script>
+    <style type="text/css">
+    </style>
+     <div style='position:absolute; top:000px; left:680px;'>
+		<a href="http://localhost/Memoria-Virtual/Fase3.html"><img src="Imagens/avanca.png"></a>
+		</div>
+    <div style='position:absolute; top:000px; left:000px;'>
+		<a href="http://localhost/Memoria-Virtual/Fase1.html"><img src="Imagens/voltar.png"></a>
+		</div>
+     <div style='position:absolute; top:020px; left:350px;'>
+		<a href="http://localhost/Memoria-Virtual/PaginaInicial.html"><img src="Imagens/sair.png"></a>
+		</div>
+<audio src="Musica\RetroVision - Puzzle [NCS Release].mp3" preload="auto" autoplay controls
+       style='position:absolute; top:570px; left:220px;'></audio> </head>
+<body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, render: render });
+
+    
+function preload() {
+
+  
+   game.load.image('fundo', 'Imagens/fundo.png');
+    game.load.image('quadro', 'Imagens/imagens1.png');
+    game.load.image('resposta', 'Imagens/resposta1.png');
+    game.load.image('cachorro', 'Imagens/cachorro1.png');
+    game.load.image('rcabide', 'Imagens/cabide.png');
+    game.load.image('rcolher', 'Imagens/colher.png');
+    game.load.image('rcachorro', 'Imagens/cachorro.png');
+    
+}
+
+    var pontuacao = 0;
+    var scoreText;
+    var cabide;
+    var colher;
+    var rcachorro;
+    var resposta;
+    var fundo;
+    function create() {
+    //adiciona física ao jogo
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    fundo = game.add.sprite(0, 0, 'fundo');
+    game.add.sprite(150, 110, 'quadro');
+    resposta = game.add.sprite(160, 350, 'resposta');
+    game.add.sprite(300, 120, 'cachorro');
+    cabide = game.add.sprite(110, 500, 'rcabide');
+    colher = game.add.sprite(300, 500, 'rcolher');
+    rcachorro = game.add.sprite(500, 500, 'rcachorro');
+     //adiciona texto pontuação
+    scoreText = game.add.text(300,70,'Pontuação: 0',{fontSize: '32px',fill:'#000'} );
+    //game.physics.arcade.enable(rcachorro);
+    rcachorro.inputEnabled = true;
+    rcachorro.input.enableDrag(true);
+    /*game.physics.arcade.enable(rcachorro);
+    rcachorro.body.collideWorldBounds = true;
+    rcachorro.enableBody=true;
+    rcachorro.body.bounce.y = 0;
+    rcachorro.body.gravity.y = 300;*/
+    //respostas se movem
+    cabide.inputEnabled = true;
+    cabide.input.enableDrag(true);
+    colher.inputEnabled = true;
+    colher.input.enableDrag(true);
+    //torna o quadro imovel
+    resposta.body.immovable = true;
+   
+   
+
+ 
+}
+    
+    function render() {
+    }
+    function update(){
+   /*game.physics.arcade.collide(rcachorro,fundo);
+  game.physics.arcade.collide(rcachorro,resposta,arraste(),null,this);*/     
+    } 
+    
+    /*function arraste(rcachorro,resposta) {
+    rcachorro.kill();
+    pontuacao+=20;
+    scoreText.content ='Pontuação: '+ pontuacao;
+
+    }*/
+
+    
+</script>
+
+</body>
+</html>
