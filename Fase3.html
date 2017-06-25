@@ -2,15 +2,15 @@
 <html lang="en"> 
 <head> 
 	<meta charset="UTF-8" />
-	<title>Phaser - Fase 02 </title>
+	<title>Phaser -Fase 03 </title>
 	<script type="text/javascript" src="js/phaser.min.js"></script>
     <style type="text/css">
     </style>
      <div style='position:absolute; top:000px; left:680px;'>
-		<a href="http://localhost/Memoria-Virtual/Fase3.html"><img src="Imagens/avanca.png"></a>
+		<a href="http://localhost/Memoria-Virtual/Fase4.html"><img src="Imagens/avanca.png"></a>
 		</div>
     <div style='position:absolute; top:000px; left:000px;'>
-		<a href="http://localhost/Memoria-Virtual/Fase1.html"><img src="Imagens/voltar.png"></a>
+		<a href="http://localhost/Memoria-Virtual/Fase2.html"><img src="Imagens/voltar.png"></a>
 		</div>
      <div style='position:absolute; top:020px; left:350px;'>
 		<a href="http://localhost/Memoria-Virtual/PaginaInicial.html"><img src="Imagens/sair.png"></a>
@@ -30,48 +30,43 @@ function preload() {
    game.load.image('fundo', 'Imagens/fundo.png');
     game.load.image('quadro', 'Imagens/imagens1.png');
     game.load.image('resposta', 'Imagens/resposta1.png');
-    game.load.image('cachorro', 'Imagens/cachorro1.png');
-    game.load.image('rcabide', 'Imagens/cabide.png');
+    game.load.image('casa', 'Imagens/casa1.png');
+    game.load.image('rcasa', 'Imagens/rcasa.png');
+    game.load.image('rarvore', 'Imagens/rarvore.png');
     game.load.image('rcolher', 'Imagens/colher.png');
-    game.load.image('rcachorro', 'Imagens/cachorro.png');
     
 }
 
     var pontuacao = 0;
     var scoreText;
-    var rcabide;
+    var rcasa;
+    var rarvore;
     var rcolher;
-    var rcachorro;
-    
-    function create() {
-        
+   
+function create() {
+
         game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.add.sprite(0, 0, 'fundo');
+	game.add.sprite(0, 0, 'fundo');
     game.add.sprite(150, 110, 'quadro');
     game.add.sprite(160, 350, 'resposta');
-    game.add.sprite(300, 120, 'cachorro');
+    game.add.sprite(300, 120, 'casa');
     
-        rcabide = game.add.sprite(110, 500, 'rcabide');
-        rcolher = game.add.sprite(300, 500, 'rcolher');
-        rcachorro = game.add.sprite(500, 500, 'rcachorro');
+    rcasa = game.add.sprite(110, 500, 'rcasa');
+    rarvore = game.add.sprite(300, 500, 'rarvore');
+    rcolher = game.add.sprite(500, 500, 'rcolher');
     
-        rcachorro.inputEnabled = true;
-        rcachorro.input.enableDrag(true);
-        rcabide.inputEnabled = true;
-        rcabide.input.enableDrag(true);
-        rcolher.inputEnabled = true;
-        rcolher.input.enableDrag(true);
-        
-        scoreText = game.add.text(300,70,'Pontuação: 20 ',{fontSize: '32px',fill:'#000'} );
-
+    rcasa.inputEnabled = true;
+    rcasa.input.enableDrag(true);
+    rarvore.inputEnabled = true;
+    rarvore.input.enableDrag(true);
+    rcolher.inputEnabled = true;
+    rcolher.input.enableDrag(true);
+    
+        scoreText = game.add.text(300,70,'Pontuação: 40 ',{fontSize: '32px',fill:'#000'} );
+}  
+    
+function render() {
 }
-    
-    function render() {
-    }
-    
-    function update(){
-    } 
-    
 </script>
 
 </body>
